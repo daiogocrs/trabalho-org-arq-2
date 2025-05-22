@@ -8,7 +8,7 @@ inicio
     leia(entrada)
 
     se (entrada < 1000) entao
-        // Celsius ? Fahrenheit
+        // Celsius -> Fahrenheit
 
         sinal <- 1
         se (entrada < 0) entao
@@ -51,11 +51,11 @@ inicio
 
     senao
         se (entrada < 2000) entao
-            // Fahrenheit positivo ? Celsius
+            // Fahrenheit positivo -> Celsius
             fahrenheit <- entrada - 1000
 
         senao
-            // Fahrenheit negativo ? Celsius
+            // Fahrenheit negativo -> Celsius
             fahrenheit <- entrada - 2000
             i <- 0
             fahrenheit <- i - fahrenheit
@@ -80,7 +80,7 @@ inicio
             mult <- i - mult
         fimse
 
-        // Arredondamento para divis�o por 9
+        // Arredondamento para divisao por 9
         mult <- mult + 4
 
         sinal2 <- 1
@@ -99,6 +99,7 @@ inicio
         se (sinal2 < 0) entao
             i <- 0
             div <- i - div
+            div <- div - 1   // Correção aqui!
         fimse
 
         celsius <- div
