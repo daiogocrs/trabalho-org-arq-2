@@ -1,0 +1,109 @@
+procedimento principal()
+declaracoes
+    inteiro entrada, celsius, fahrenheit
+    inteiro i, mult, div
+    inteiro sinal, sinal2
+inicio
+
+    leia(entrada)
+
+    se (entrada < 1000) entao
+        // Celsius ? Fahrenheit
+
+        sinal <- 1
+        se (entrada < 0) entao
+            sinal <- -1
+            i <- 0
+            entrada <- i - entrada
+        fimse
+
+        mult <- 0
+        para i <- 1 ate 9 passo 1
+            mult <- mult + entrada
+        fimpara
+
+        se (sinal < 0) entao
+            i <- 0
+            mult <- i - mult
+        fimse
+
+        sinal2 <- 1
+        se (mult < 0) entao
+            sinal2 <- -1
+            i <- 0
+            mult <- i - mult
+        fimse
+
+        div <- 0
+        enquanto (mult >= 5) faca
+            mult <- mult - 5
+            div <- div + 1
+        fimenquanto
+
+        se (sinal2 < 0) entao
+            i <- 0
+            div <- i - div
+        fimse
+
+        fahrenheit <- div + 32
+
+        escreva(fahrenheit)
+
+    senao
+        se (entrada < 2000) entao
+            // Fahrenheit positivo ? Celsius
+            fahrenheit <- entrada - 1000
+
+        senao
+            // Fahrenheit negativo ? Celsius
+            fahrenheit <- entrada - 2000
+            i <- 0
+            fahrenheit <- i - fahrenheit
+        fimse
+
+        fahrenheit <- fahrenheit - 32
+
+        sinal <- 1
+        se (fahrenheit < 0) entao
+            sinal <- -1
+            i <- 0
+            fahrenheit <- i - fahrenheit
+        fimse
+
+        mult <- 0
+        para i <- 1 ate 5 passo 1
+            mult <- mult + fahrenheit
+        fimpara
+
+        se (sinal < 0) entao
+            i <- 0
+            mult <- i - mult
+        fimse
+
+        // Arredondamento para divisão por 9
+        mult <- mult + 4
+
+        sinal2 <- 1
+        se (mult < 0) entao
+            sinal2 <- -1
+            i <- 0
+            mult <- i - mult
+        fimse
+
+        div <- 0
+        enquanto (mult >= 9) faca
+            mult <- mult - 9
+            div <- div + 1
+        fimenquanto
+
+        se (sinal2 < 0) entao
+            i <- 0
+            div <- i - div
+        fimse
+
+        celsius <- div
+
+        escreva(celsius)
+    fimse
+
+fim

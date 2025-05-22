@@ -1,0 +1,58 @@
+procedimento principal()
+declaracoes
+    inteiro fahrenheit, celsius
+    inteiro i, mult, div
+    inteiro sinal_f, sinal_m
+inicio
+    leia(fahrenheit)
+
+    // Passo 1: subtrair 32
+    fahrenheit <- fahrenheit - 32
+
+    // Passo 1.5: detectar sinal de fahrenheit
+    sinal_f <- 1
+    se (fahrenheit < 0) entao
+        sinal_f <- -1
+        // inverter para positivo usando 0 - fahrenheit
+        i <- 0
+        fahrenheit <- i - fahrenheit
+    fimse
+
+    // Passo 2: multiplicar por 5 usando somas
+    mult <- 0
+    para i <- 1 ate 5 passo 1
+        mult <- mult + fahrenheit
+    fimpara
+
+    // restaurar sinal em mult
+    se (sinal_f < 0) entao
+        i <- 0
+        mult <- i - mult
+    fimse
+
+    // Passo 3: dividir por 9 usando subtrações
+    div <- 0
+
+    // detectar sinal de mult
+    sinal_m <- 1
+    se (mult < 0) entao
+        sinal_m <- -1
+        i <- 0
+        mult <- i - mult
+    fimse
+
+    enquanto (mult >= 9) faca
+        mult <- mult - 9
+        div <- div + 1
+    fimenquanto
+
+    // restaurar sinal em div
+    se (sinal_m < 0) entao
+        i <- 0
+        div <- i - div
+    fimse
+
+    celsius <- div
+
+    escreva(celsius)
+fim

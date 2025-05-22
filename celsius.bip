@@ -1,0 +1,54 @@
+procedimento principal()
+declaracoes
+    inteiro celsius, fahrenheit
+    inteiro i, mult, div, sinal_c, sinal_m
+inicio
+    
+    leia(celsius)
+
+    // Armazenar sinal de celsius
+    sinal_c <- 1
+    se (celsius < 0) entao
+        sinal_c <- -1
+        i <- 0
+        celsius <- i - celsius
+    fimse
+
+    // Multiplicar por 9 usando somas
+    mult <- 0
+    para i <- 1 ate 9 passo 1
+        mult <- mult + celsius
+    fimpara
+
+    // Restaurar sinal do resultado da multiplicação
+    se (sinal_c < 0) entao
+        i <- 0
+        mult <- i - mult
+    fimse
+
+    // Tratar sinal antes da divisão por 5
+    sinal_m <- 1
+    se (mult < 0) entao
+        sinal_m <- -1
+        i <- 0
+        mult <- i - mult
+    fimse
+
+    // Divisão por 5 usando subtração
+    div <- 0
+    enquanto (mult >= 5) faca
+        mult <- mult - 5
+        div <- div + 1
+    fimenquanto
+
+    // Restaurar sinal do quociente
+    se (sinal_m < 0) entao
+        i <- 0
+        div <- i - div
+    fimse
+
+    // Fahrenheit = resultado da divisão + 32
+    fahrenheit <- div + 32
+
+    escreva(fahrenheit)
+fim
