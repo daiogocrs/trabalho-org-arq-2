@@ -1,3 +1,4 @@
+
 # Conversor de Temperatura em Portugol para Processador BIP
 
 Este projeto implementa um conversor de temperaturas entre Celsius e Fahrenheit utilizando a linguagem **Portugol**, desenvolvida para simular instruções de alto nível compiláveis para a **arquitetura BIP (Básico Interpretador de Programas)**.
@@ -37,7 +38,11 @@ Como o BIP trabalha com apenas **uma entrada numérica** e **uma saída numéric
 
 ## 🛠 Execução
 
-O código deve ser compilado e executado em um ambiente compatível com a simulação do processador BIP que suporte a linguagem Portugol fornecida nas aulas.
+Este código foi testado e executado utilizando o ambiente de simulação **BIPIDE**.
+
+**Arquivo principal:** `conversor.bip`
+
+Abra este arquivo no **BIPIDE**, execute e insira o valor desejado.
 
 **Exemplo de entrada e saída esperada:**
 
@@ -48,13 +53,11 @@ Saída: 10
 
 ## 📄 Arquivo Principal
 
-- `codigo.portugol`: contém todo o código-fonte com tratamento completo de sinais, operações sem multiplicação e arredondamento correto para a divisão.
-
----
+- `conversor.bip`: contém todo o código-fonte com tratamento completo de sinais, operações sem multiplicação e arredondamento correto para a divisão.
 
 ## 👨‍💻 Autor
 
-- **Aluno**: [Seu Nome Aqui]
+- **Aluno**: Diogo Borges Corso
 - **Curso**: Engenharia da Computação
 - **Universidade**: Universidade Federal de Santa Catarina - Campus Araranguá
 - **Disciplina**: Organização e Arquitetura de Computadores
